@@ -1,0 +1,154 @@
+1. 
+Class : Its like the container of the properties of the real world objects.
+Object : it is the blueprint of the class , instance/variable of class.
+    
+    Let's take an example of human_beings:
+         class: class human_beings:
+                def properties(self,height,weight,age):
+                    self.height = height    --__
+                    self.weight = weight        --__ these are the properties
+                    self.age = age         __----''
+                    
+        object: healthy = human_beings("1.5" , "2.4" ,19)
+            
+            
+2.
+four pillars of oops:'
+    1.Polymorphism
+    2.Encapsulation
+    3.Abstraction
+    4.Inheritence
+    
+3.
+__init()__ function is used as a constructor of class.
+class test:
+    def __init__(self,name):
+        self.real_name = name
+        
+stud1 = test("Ayush Raj")
+
+4.
+self is used as a reference pointer in the methods within class . It is actually used to bind a method to the class.
+one important note is that is's not mandatory to write 'self' . We can write anything valid as variable name on behalf of the 'self'
+
+5.
+Inheritence is the properth of oops which helps the derived class to acquire parent class properties.
+1.single inheritence
+             #parent class
+        class Above:
+            i = 5
+            def fun1(self):
+                print(“Hey there, you are in the parent class”)
+
+        #subclass
+        class Below(Above):
+            i=10
+            def fun2(self):
+                print(“Hey there, you are in the sub class”)
+
+        temp1=Below()
+        temp2=Above()
+        temp1.fun1()
+        temp1.fun2()
+        temp2.fun1()
+        print(temp1.i)
+        print(temp2.i)
+        #temp2.fun2()
+2. multiple inheritence
+        #parent class 1
+        class A:
+            demo1=0
+            def fun1(self):
+                print(self.demo1)
+
+        #parent class 2
+        class B:
+            demo2=0
+            def fun2(self):
+                print(self.demo2)
+
+        #child class
+        class C(A, B):
+            def fun3(self):
+                print(“Hey there, you are in the child class”)
+
+        # Main code
+        c = C()
+        c.demo1 = 10
+        c.demo2 = 5
+        c.fun3()
+        print(“second number is : “,c.demo2)
+        print(“first number is : “,c.demo1)
+        
+        
+        3.multilevel inheritence
+                #parent class 1
+        class vehicle:
+            def functioning(self):
+                print(“vehicles are used for transportation”)
+
+        #child class 1
+        class car(vehicle):
+            def wheels(self):
+                print(“a car has 4 wheels”)
+
+        #child class 2
+        class electric_car(car):
+            def speciality(self):
+                print(“electric car runs on electricity”)
+
+        electric=electric_car()
+        electric.speciality()
+        electric.wheels()
+        electric.functioning()
+        
+        4.hierarchial inheritence:
+            
+            #parent class
+            class Parent:
+                def fun1(self):
+                    print(“Hey there, you are in the parent class”)
+
+            #child class 1
+            class child1(Parent):
+                def fun2(self):
+                    print(“Hey there, you are in the child class 1”)
+
+            #child class 2 
+            class child2(Parent):
+                def fun3(self):
+                    print(“Hey there, you are in the child class 2”)
+
+            #child class 3
+            class child3(Parent):
+                def fun4(self):
+                    print(“Hey there, you are in the child class 3”)
+
+            # main program
+            child_obj1 = child3()
+            child_obj2 = child2()
+            child_obj3 = child1()
+            child_obj1.fun1()
+            child_obj1.fun4()
+            child_obj2.fun1()
+            child_obj2.fun3()
+            child_obj3.fun1()
+            child_obj3.fun2()
+            
+            5.Hybrid inheritence
+            class A:
+                    def fun1(self):
+                    print(“Hey there, you are in class A”)
+            class B(A):
+                def fun2(self):
+                print(“Hey there, you are in class B”)
+            class C(A):
+                    def fun3(self):
+                    print(“Hey there, you are in class C”)
+            class D(C,A): #line 13
+                def fun4(self):
+                print(“Hey there, you are in the class D”)#main program
+            ref = D()
+            ref.fun4()
+            ref.fun3()
+            ref.fun1()
